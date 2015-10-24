@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>test</title>
+</head>
+<body>
+
+<script src="assets/js/eManagerCore.js"></script>
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost:3000');
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>
+
+</body>
+</html> 
